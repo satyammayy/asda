@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Portfolio</title>
+    <style>
+        /* Add your CSS styling here */
+        /* Add your CSS styling here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.member {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 40px); /* Change width to full width for mobile */
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Divide member class in 3:2:1 format */
+.member:nth-child(3n+2),
+.member:nth-child(3n+3) {
+    width: calc(100% - 40px); /* Change width to full width for mobile */
+}
+
+/* Media query for smaller screens */
+@media only screen and (min-width: 600px) {
+    .member {
+        width: calc(33.33% - 40px);
+    }
+
+    .member:nth-child(3n+2) {
+        width: calc(50% - 30px);
+    }
+
+    .member:nth-child(3n+3) {
+        width: calc(100% - 40px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tech Loom</h1>
+    </header>
+    <div class="container">
+        <div class="member">
+            <img src="Satyam.jpg" alt="Member 1">
+            <h2>Satyam Mayengbam</h2>
+            <p>Role: Project Leader and Coder</p>
+            <p>Bio: Tech Enthusiast with deep understanding of Electronics.</p>
+            <p>Email: satyammay123@gmail.com</p>
+        </div>
+        <div class="member">
+            <img src="Saran.jpg" alt="Member 2">
+            <h2>Saran Khadka</h2>
+            <p>Role: Electronics Designer and Coder.</p>
+            <p>Bio: Electronics Students with a keen interest in future technologies.</p>
+            <p>Email: khadkasaran737@gmail.com</p>
+        </div>
+        <div class="member">
+            <img src="Yash.jpg" alt="Member 3">
+            <h2>Yash Gupta</h2>
+            <p>Role: Designer and Web Developer.</p>
+            <p>Bio: Tech Enthusiast with good knowledge of Designs.</p>
+            <p>Email: yashgupta8848@gmail.com</p>
+        </div>
+        <div class="member">
+            <img src="Shashi.jpg" alt="Member 4">
+            <h2>Shashi Tiwari</h2>
+            <p>Role: Web Developer</p>
+            <p>Bio: Tech Enthusiast with keen interest in future technologies.</p>
+            <p>Email: sht2874510@gmail.com</p>
+        </div>
+        <div class="member">
+            <img src="Sabith.jpg" alt="Member 5">
+            <h2>Shaik Sabith</h2>
+            <p>Role: Web Developer</p>
+            <p>Bio: CSE Student</p>
+            <p>Email: sabithsk05@gmail.com</p>
+        </div>
+        <div class="member">
+            <img src="Dean.jpg" alt="Member 6">
+            <h2>Dr S V RANGANAYAKULU</h2>
+            <p>Role: Mentor</p>
+            <p>Professor of Physics| Dean(R&D)| Guru Nanak Institutions Technical Campus
+            Ibrahimpatnam-501506</p>
+            <p>Mobile: +91-9866532613</p>
+            <p>Email: deanrnfd.gnitc@gniindia.org</p>
+        </div>
+    </div>
+</body>
+</html>
+
+

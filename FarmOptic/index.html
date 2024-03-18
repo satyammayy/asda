@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmOptic</title>
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+  <header>
+    <div class="title">
+      <h1>FARMOPTIC: PRECISION CROP GUIDANCE</h1>
+    </div>
+    <div class="logo">
+      <img src="Logo.jpg" alt="logo" width="180" height="180">
+    </div>
+  </header>
+  <nav>
+    <a href="/index.html">Dashboard</a> |
+    <a href="/recommendation.html/">Recommendation</a>|
+    <a href="/aboutus.HTML">About us:</a>
+  </nav>
+  <aside>
+    <h2>FarmOptic: Precision Crop Guidance</h2>
+    <p>FarmOptic, a system that provides precision crop guidance using a combination of sensors and the node mcu.
+      FarmOptic helps farmers optimize their crops growth by monitoring various environmental factors such as soil
+      pH, moisture levels, temperature, and humidity. With this data, farmers can make informed decisions about
+      irrigation, fertilization, and pest control, ultimately increasing crop yields and reducing resource waste.It also
+      suggests suitable crops for certain environment conditions.
+    </p>
+  </aside>
+
+  <div class="container">
+    <iframe
+      src="https://thingspeak.com/channels/2473945/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature+Data&type=line"></iframe>
+    <iframe
+      src="https://thingspeak.com/channels/2473945/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    <iframe
+      src="https://thingspeak.com/channels/2473945/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    <iframe
+      src="https://thingspeak.com/channels/2473945/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+  </div>
+
+  <button onclick="sendRequest()">Get Crop Recommendation</button>
+
+  <script>
+    function sendRequest() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.thingspeak.com/update?api_key=NFYLDC4OKS7Z3MAQ&field1=1", true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log("GET request sent successfully!");
+          // You can add further actions here upon successful request completion
+        } else {
+          console.error("Error sending GET request!");
+          // You can handle errors here if needed
+        }
+      };
+      xhr.send();
+    }
+  </script>
+
+</body>
+
+</html>
